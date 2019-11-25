@@ -67,6 +67,7 @@ export default {
       _template = localFileManager.get(localStore, keys.TEMPLATE)
       
       ct.host = _settings.churchtoolshost
+      ct.proxy = _settings.churchtoolsproxy
       this.$store.dispatch('UPDATE_SETTINGS', _settings)
       this.$store.dispatch('UPDATE_TEMPLATE', _template)
     },

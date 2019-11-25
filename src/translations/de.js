@@ -43,6 +43,7 @@ export default
   'settings': 'Einstellungen',
   'chuchname': 'Gemeindename',
   'churchtoolsURL': 'Churchtools Webseite',
+  'churchtoolsProxyURL': 'Proxy-URL (optional)',
   'logoDescription': 'Alt-Text Beschreibung',
   'logoRemove': 'Entfernen',
   'logoNone': 'Lade ein Logo für die Gemeinde hoch',
