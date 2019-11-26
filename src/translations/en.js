@@ -43,6 +43,7 @@ export default
     'settings': 'Settings',
     'chuchname': 'Church Name',
     'churchtoolsURL': 'Churchtools Website',
+    'churchtoolsProxyURL': 'Proxy-URL (optional)',
     'logoDescription': 'Alt-text Description',
     'logoRemove': 'Delete',
     'logoNone': 'Upload a logo for your church',

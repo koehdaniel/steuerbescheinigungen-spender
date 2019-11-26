@@ -12,6 +12,7 @@
       </h2>
       <v-text-field :label="$t('chuchname')" type="text" v-model="settings.churchname" required></v-text-field>
       <v-text-field :label="$t('churchtoolsURL')" type="text" v-model="settings.churchtoolshost" required></v-text-field>
+      <v-text-field :label="$t('churchtoolsProxyURL')" type="text" v-model="settings.churchtoolsproxy"></v-text-field>
       <h3 class="py-2">
         Logo
         <v-btn v-show="getChurchLogoSrc() != ''" flat small color="error" @click="removeLogo">{{ $t('logoRemove') }}</v-btn>
@@ -64,6 +65,7 @@ export default {
     },
     save: function() {
       ct.host = this.settings.churchtoolshost
+      ct.proxy = this.settings.churchtoolsproxy
       localFileManager.save(localStore, keys.SETTINGS, this.settings)      
       this.$store.dispatch('UPDATE_SETTINGS', this.settings)
       this.$emit('close')      

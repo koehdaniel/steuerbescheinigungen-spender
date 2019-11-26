@@ -11,6 +11,17 @@ import { map, each } from 'underscore';
 var cookieStore = {};
 let retryCount = 0;
 
+var getAgentIfProxy = function () {
+  var HttpsProxyAgent = require('https-proxy-agent');
+  var proxy = churchtools.proxy;
+
+  if(proxy == undefined || proxy == "" || proxy.startsWith("#")){
+    return undefined;
+  }
+  return new HttpsProxyAgent(proxy);
+
+}
+
 var PostQ = function (q, data, contentType, multipart, retry) {
   // FIXME: check here, if we should abort
 
@@ -27,7 +38,8 @@ var PostQ = function (q, data, contentType, multipart, retry) {
       Cookie: cookies,
       'Content-Type': contentType
     },
-    data: data
+    data: data,
+    agent: getAgentIfProxy()
   }).on("complete", function(result, res) {
     data.password = undefined;
 
