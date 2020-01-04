@@ -153,11 +153,13 @@ function addSignatureBlock(doc, templateData) {
   //Add Text
   if (templateData.letter.signature.pastor != "" && templateData.letter.signature.cashier != "") {
     doc.text(templateData.letter.signature.cashier, doc.x + signatureWidth - 5, doc.y - 2, { 'width': signatureWidth, 'align': 'center'})
-    .text(templateData.name  + " 1", doc.x, doc.y, { 'width': signatureWidth, 'align': 'center'})
-    .moveUp(2)
+    //.text(templateData.name, doc.x, doc.y, { 'width': signatureWidth, 'align': 'center'})
+    //.moveUp(2)
+    .moveUp(1)
     doc.text(templateData.letter.signature.pastor, doc.x + signatureWidth + 5, doc.y - 2, { 'width': signatureWidth, 'align': 'center'})
-    .text(templateData.name  + " 1", doc.x, doc.y, { 'width': signatureWidth, 'align': 'center'})
-    .moveUp(2);
+    //.text(templateData.name, doc.x, doc.y, { 'width': signatureWidth, 'align': 'center'})
+    //.moveUp(2);
+    .moveUp(1);
   }
   else {
     if (templateData.letter.signature.pastor != "" || templateData.letter.signature.cashier != "") {
@@ -181,9 +183,10 @@ function addAnlageHeader(doc, person, templateData) {
   let startX = doc.x;
   let startY = doc.y;
   doc.font('FontNormal')
-  .text(templateData.report.formOfAddress, startX, startY, { 'width': 75, 'align': 'left'})
-  doc.x = startX + 75;
-  doc.y = startY;
+  .text(templateData.report.formOfAddress, startX, startY, { 'width': pageWidth, 'align': 'left'})
+  .moveDown(1)
+  //doc.x = startX;
+  //doc.y = startY;
   addAddress(doc, person, false)
 
   if (templateData.reportsettings.showSpenderNr) {

@@ -62,13 +62,16 @@ const saveToUserDataAndLocalStorage = function (localStore, key, data) {
 }
 
 const readFromUserDataAndLocalStorage = function (localStore, key) {
+  //Lade-Reihenfolge geändert, da Bug in Issue-43
   try {
     let _data
     //Get from LocalStorage
-    _data = localStore.getItem(key)
+    //_data = localStore.getItem(key)
+    _data = store.get(key)
     if (isDataDoesNotExists(_data)) {
       //get from UserData if LocalStorage is empty
-      _data = store.get(key)
+      //_data = store.get(key)
+      _data = localStore.getItem(key)
     }
     if (isDataDoesNotExists(_data)) {
       //Get from default template
