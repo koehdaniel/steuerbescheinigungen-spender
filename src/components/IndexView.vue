@@ -174,14 +174,14 @@
                     <v-icon>account_balance</v-icon>
                   </v-tab>
                 <v-tabs-items>
-                  <v-tab-item value="tab-1">
+                  <v-tab-item id="tab-1">
                     <v-card flat>
                       <v-card-text>                    
                         <donor-view :title="$t('donorTabTitle')" :donors="[...donationReportData]"></donor-view>
                       </v-card-text>
                     </v-card>
                   </v-tab-item>
-                  <v-tab-item value="tab-2">
+                  <v-tab-item id="tab-2">
                     <v-card flat>                      
                       <v-tabs                      
                         color="transparent"
@@ -233,16 +233,16 @@
                     </v-tabs>
                     </v-card>
                   </v-tab-item>
-                  <v-tab-item value="tab-3">
+                  <v-tab-item id="tab-3">
                     <v-card flat>
                       <v-card-text><churchtools-view :title="$t('churchtoolNotInAddisonTabTitle')" :persons="[...noMatchingAddisonSpenderIdInChurchtools]"></churchtools-view></v-card-text>                    </v-card>
                   </v-tab-item>
-                  <v-tab-item value="tab-4">
+                  <v-tab-item id="tab-4">
                     <v-card flat>
                       <v-card-text><churchtools-view :title="$t('churchtoolTab')" :persons="[...persons]"></churchtools-view></v-card-text>
                     </v-card>
                   </v-tab-item>
-                  <v-tab-item value="tab-5">
+                  <v-tab-item id="tab-5">
                     <v-card flat>
                       <v-card-text><addison-view :title="$t('addisonTab')" :addison-data="[...addisonData]"></addison-view></v-card-text>
                     </v-card>
